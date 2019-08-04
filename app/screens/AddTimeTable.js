@@ -20,10 +20,7 @@ const style=EStyleSheet.create({
  class AddTimeTable extends Component {
 
 
-    gotoAdddata = () => {
-   // console.log(text);
-        this.props.navigation.navigate('AddData');
-    }
+  
 
   render() {
   

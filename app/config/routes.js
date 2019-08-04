@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation'
 import Splash from '../screens/Splash';
 import Login from '../screens/Login';
 import AddTimeTable from '../screens/AddTimeTable';
-import AddData from '../screens/AddData';
+
 
 export default createStackNavigator({
     Splash:{
@@ -25,12 +25,5 @@ export default createStackNavigator({
         }
      
     },
-   AddData:{
-      screen: AddData,
-      navigationOptions: {
-         
-        header:() =>null
-         
-    }
-},
+  
 },);
