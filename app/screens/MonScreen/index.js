@@ -54,6 +54,10 @@ import PopupDialog from '../../components/PopUpDialog'
        
       }
 
+      gotoDrawer=()=>{
+        this.props.navigation.navigate('SignIn');
+      }
+
     render(){
     
         return(
@@ -75,7 +79,9 @@ import PopupDialog from '../../components/PopUpDialog'
           <View style={styles.footer}>
                <AddDayDataBtn 
                  name="arrow-left"/>
-                 <RoundedCorner/>
+                 <RoundedCorner  
+                    onPress={this.gotoDrawer}
+                 />
                  <AddDayDataBtn 
                  name="arrow-right"/>
           </View>

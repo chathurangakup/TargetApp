@@ -3,7 +3,8 @@ import { Platform,Dimensions} from 'react-native';
 import {
     createStackNavigator,
     createDrawerNavigator,
-    createAppContainer
+    createSwitchNavigator,
+    createAppContainer,
 } from 'react-navigation';
 
 import HomeScreen from '../screens/HomeScreen';
@@ -33,53 +34,14 @@ const SignedOut = createStackNavigator({
         }
     },
   
-    SunScreen:{
-        screen: SunScreen,
-        navigationOptions: {
-            header:null,
-            }
-    },
-
+   
     MonScreen:{
         screen: MonScreen,
         navigationOptions: {
             header:null,
             }
     },
-
-    TueScreen:{
-        screen: TueScreen,
-        navigationOptions: {
-            header:null,
-            }
-    },
-    WheScreen:{
-        screen: WheScreen,
-        navigationOptions: {
-            header:null,
-            }
-    },
-
-    ThrusScreen:{
-        screen: ThrusScreen,
-        navigationOptions: {
-            header:null,
-            }
-    },
-
-    FriScreeen:{
-        screen: FriScreeen,
-        navigationOptions: {
-            header:null,
-            }
-    },
-
-    SatScreen:{
-        screen: SatScreen,
-        navigationOptions: {
-            header:null,
-            }
-    },
+    
     
    
 },{
@@ -94,15 +56,51 @@ const SignedOut = createStackNavigator({
 
 );
 
-
-
-
-
-const DrawerNavigator=createDrawerNavigator({
-    Home:{
-        screen:HomeScreen,
-    }
+const ChangeTarget= createStackNavigator({
+    MonScreen:{
+        screen: MonScreen,
+        navigationOptions: {
+            header:null,
+            }
+    },
+   
+    ThrusScreen:{
+        screen: ThrusScreen,
+        navigationOptions: {
+            header:null,
+            }
+    },
 });
 
-const App=createAppContainer(DrawerNavigator)
+
+const SignIn=createDrawerNavigator({
+    Home:{
+        screen:HomeScreen,
+    },
+    ChangeTar:{
+        screen:ChangeTarget
+    }
+   
+});
+
+const signedIn=false;
+
+ const createRootNavigator =createSwitchNavigator(
+     
+        {
+        SignedOut: {
+            screen: SignedOut
+         },
+         SignIn: {
+            screen: SignIn
+         },
+         
+        },
+        // {
+        //     initialRouteName: signedIn ? "SignedIn" : "SignedOut"
+        //   }
+      );
+
+
+const App = createAppContainer(createRootNavigator)
 export default App;

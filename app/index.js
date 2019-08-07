@@ -4,7 +4,7 @@ import  EStyleSheet  from 'react-native-extended-stylesheet';
 
 import  Splash  from './screens/Splash';
 
-import Navigator  from './config/routes';
+//import Navigator  from './config/routes';
 import MonScr from './screens/HomeScreen';
 import Navigation from './navigators/routes'
 //import { Container } from './components/Container';

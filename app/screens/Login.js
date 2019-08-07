@@ -45,7 +45,7 @@ class Login extends Component{
     }
 
     submitpressed = () =>{
-      this.props.navigation.navigate('AddTimeTable');
+      this.props.navigation.navigate('MonScreen');
        console.log(updateDetails());
     }
 
